@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>ɃTM</title>
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">Save-A-Bit Ƀitcoin Dispenser</h1>
+
+    <div class="ui row">
+      <div class="well col-sm-6 purchase-bitcoin">
+
+        <h3>Purchase Ƀitcoin</h3>
+
+        <ul class="list-group display-area">
+
+          <li class="list-group-item">
+            <span id="bitcoin-available" class="badge">0.02</span>
+            Ƀitcoin available for purchase
+          </li>
+
+          <li class="list-group-item">
+            <span id="bitcoin-purchased" class="badge">0.00</span>
+            Ƀitcoin you have purchased
+          </li>
+
+        </ul>
+
+        <label for="bitcoin-address-payout">Your Ƀitcoin payout address</label>
+        <div class="input-group">
+          <input type="text" class="form-control" id="bitcoin-address-payout" aria-describedby="basic-addon3">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+          </span>
+        </div>
+
+
+        <div class="row payout-area">
+          <div class="col-sm-12">
+            <div class="text-center">
+              <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span> Payout
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+      </div> <!-- /.row -->
+      <div class="col-sm-6 sell-bitcoin">
+        <!-- @todo implement... or not -->
+      </div>
+    </div>
+  </div>
+
+
+
+
+</body>
+</html>
