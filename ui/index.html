@@ -6,6 +6,7 @@
   <script src="https://code.jquery.com/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.css">
   <link rel="stylesheet" href="css/main.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -13,32 +14,33 @@
 <body>
 
   <div class="container">
-    <h1 class="title">Save-A-Bit Ƀitcoin Dispenser</h1>
+    <h1 class="title">Save-A-Bit Ƀitcoin Kiosk</h1>
 
     <div class="ui row">
       <div class="well col-sm-6 purchase-bitcoin">
 
         <h3>Purchase Ƀitcoin</h3>
 
-        <ul class="list-group display-area">
 
-          <li class="list-group-item">
-            <span id="bitcoin-available" class="badge">0.02</span>
-            Ƀitcoin available for purchase
-          </li>
+        <p class="directions">How much Ƀitcoin would you like to purchase?</p>
 
-          <li class="list-group-item">
-            <span id="bitcoin-purchased" class="badge">0.00</span>
-            Ƀitcoin you have purchased
-          </li>
+        <div class="purchase-slider-section well">
+          <input id="purchase-slider-bitcoin" type="text"/>
+          <span class="slider-display" id="purchase-slider-bitcoin-display">0.000</span> Ƀitcoin
+        </div>
 
-        </ul>
+        <p>Insert <span id="purchase-cost-display">0.00</span> Dollars, please!</p>
+
+
 
         <label for="bitcoin-address-payout">Your Ƀitcoin payout address</label>
         <div class="input-group">
           <input type="text" class="form-control" id="bitcoin-address-payout" aria-describedby="basic-addon3">
+          <span class="input-group-addon">
+            <span id="bitcoin-address-validity" class="glyphicon glyphicon-arrow-right"></span>
+          </span>
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
+            <button id="camera-snapshot" class="btn btn-default" type="button"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></button>
           </span>
         </div>
 
@@ -46,7 +48,7 @@
         <div class="row payout-area">
           <div class="col-sm-12">
             <div class="text-center">
-              <button type="button" class="btn btn-default" aria-label="Left Align">
+              <button type="button" id="bitcoin-payout" class="btn btn-default" aria-label="Left Align">
                 <span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span> Payout
               </button>
             </div>
@@ -62,6 +64,53 @@
   </div>
 
 
+
+  <!-- Modal -->
+  <div id="cameraModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" id="modalX">&times;</button>
+          <h4 class="modal-title">Scan your Bitcoin QR code using the webcam.</h4>
+        </div>
+        <div class="modal-body">
+          <div class="text-center">
+            <div id="result"></div>
+          </div>
+
+          <div id="outdiv"></div>
+          <div id="camera-display"></div>
+
+          <div class="text-center">
+            <img src="img/loader.gif"></img>
+          </div>
+          <canvas id="qr-canvas" width="800" height="600"></canvas>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="modalClose">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- DEBUG -->
+  <div class="debug">
+
+  </div>
+
+
+  <!-- scripts -->
+  <script src="js/llqrcode.js"></script>
+  <script src="js/webqr.js"></script>
+  <script src="components/bitcore-lib/bitcore-lib.js"></script>
+  <script src="components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
+  <!-- <script src="js/build.js"></script> -->
+  <script src="js/main.js"></script>
 
 
 </body>

@@ -3,9 +3,37 @@
 }
 
 .display-area {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .ui {
   margin-top: 30px;
+}
+
+
+/*#qr-canvas {
+  display: none;
+}*/
+
+
+#outdiv
+{
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+.slider-display {
+  margin-left: 20px;
+}
+
+
+#purchase-cost-display {
+  font-size: 30px;
+  color: green;
+}
+
+
+.directions {
+  margin-top: 20px;
 }

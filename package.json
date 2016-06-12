@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/insanity54/btm/issues"
   },
-  "homepage": "https://github.com/insanity54/btm#readme"
+  "homepage": "https://github.com/insanity54/btm#readme",
+  "dependencies": {
+    "bitcore-lib": "0.13.14"
+  }
 }

@@ -1,0 +1,28 @@
+{
+  "name": "btm",
+  "description": "super simple bitcoin atm",
+  "main": "index.js",
+  "authors": [
+    "Chris Grimmett <chris@grimtech.net>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "bitcoin",
+    "btm",
+    "atm"
+  ],
+  "homepage": "https://github.com/insanity54/btm",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "ui/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "seiyria-bootstrap-slider": "^7.1.1"
+  }
+}
