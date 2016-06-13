@@ -1,10 +1,12 @@
 var btm = window.btm || {};
+var network = window.btm.network || {};
+
 
 var editTimer = null;
 var tickerTimer = null;
 
 var bitcore = require('bitcore-lib');
-var isLivenet = true;
+var isLivenet = false;
 var Address = bitcore.Address;
 var Networks = bitcore.Networks;
 
@@ -101,6 +103,7 @@ var validateInput = function validateInput() {
     $('#bitcoin-address-validity').removeClass('glyphicon-ok');
     $('#bitcoin-address-validity').addClass('glyphicon-remove');
     $('#bitcoin-address-validity').css('color', 'red');
+    $("button#purchase-bitcoin-payout").addClass("disabled");
   }
   else {
     // display green checkmark
@@ -108,8 +111,11 @@ var validateInput = function validateInput() {
     $('#bitcoin-address-validity').removeClass('glyphicon-remove');
     $('#bitcoin-address-validity').addClass('glyphicon-ok');
     $('#bitcoin-address-validity').css('color', 'green');
+    $("button#purchase-bitcoin-payout").removeClass("disabled");
   }
 };
+
+
 
 btm.enterScanData = function enterScanData(scanData) {
   $('#bitcoin-address-payout').val(parseInput(scanData));
@@ -148,13 +154,30 @@ var pSliderBitcoin = $("#purchase-slider-bitcoin").slider({
 // when bitcoin slider is slid,
 //   update text
 //   update other slider
-$("#purchase-slider-bitcoin").on("slide", function(e) {
+$("#purchase-slider-bitcoin").on("slide slideStop", function(e) {
 	$("#purchase-slider-bitcoin-display").text(e.value);
   (function updatePurchaseCost(btc) {
     $("#purchase-cost-display").text(usdFormatter.format(calculateBitcoinCost(btc)));
   })(e.value)
 });
 
+
+$("button#purchase-bitcoin-payout").on("click", function(e) {
+  var amount = $("#purchase-slider-bitcoin").slider('getValue');
+  var address = $("#bitcoin-address-payout").val();
+  network.submitPurchase(Math.floor(amount * 100000000), address); // convert to sats & send
+
+  $("input#bitcoin-address-payout").val('');
+  $("button#purchase-bitcoin-payout").addClass("disabled");
+  $('#purchaseModal').modal('show');
+});
+
+$("#tester").on("click", function() {
+   // convert to sats & send
+  network.submitPurchase(28300, 'mu3F27qcViM4udXFFiGrjEa7nmNmzS8ocf', function(e) {
+    console.log(e);
+  });
+});
 
   //
   // <!-- A button for taking snaps -->

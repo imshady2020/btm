@@ -4,7 +4,8 @@
   "description": "super simple bitcoin atm",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nf start"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,12 @@
   },
   "homepage": "https://github.com/insanity54/btm#readme",
   "dependencies": {
-    "bitcore-lib": "0.13.14"
+    "bitcore-lib": "0.13.14",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "nedb": "^1.8.0"
+  },
+  "devDependencies": {
+    "debug": "^2.2.0"
   }
 }

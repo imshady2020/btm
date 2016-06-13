@@ -11,9 +11,9 @@
 }
 
 
-/*#qr-canvas {
+#qr-canvas {
   display: none;
-}*/
+}
 
 
 #outdiv
@@ -36,4 +36,8 @@
 
 .directions {
   margin-top: 20px;
+}
+
+.debug {
+   /*display: hidden;*/
 }

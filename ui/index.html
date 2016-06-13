@@ -33,7 +33,7 @@
 
 
 
-        <label for="bitcoin-address-payout">Your Ƀitcoin payout address</label>
+        <label for="bitcoin-address-payout">Your Ƀitcoin public address</label>
         <div class="input-group">
           <input type="text" class="form-control" id="bitcoin-address-payout" aria-describedby="basic-addon3">
           <span class="input-group-addon">
@@ -48,7 +48,7 @@
         <div class="row payout-area">
           <div class="col-sm-12">
             <div class="text-center">
-              <button type="button" id="bitcoin-payout" class="btn btn-default" aria-label="Left Align">
+              <button type="button" id="purchase-bitcoin-payout" class="btn btn-default disabled" aria-label="Left Align">
                 <span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span> Payout
               </button>
             </div>
@@ -98,9 +98,38 @@
   </div>
 
 
-  <!-- DEBUG -->
-  <div class="debug">
+  <!-- Modal -->
+  <div id="purchaseModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" id="purchaseModalX">&times;</button>
+          <h4 class="modal-title">Thank you.</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="text-center">
+            <img src="img/loader-btc.gif"></img>
+          </div>
+
+          <div class="text-center">
+            <p class="description">Thank you for your purchase. Your coins are being sent.</p>
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="purchaseModalClose">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="debug">
+    <button type="button" class="btn btn-default" id="tester">SEND TEST DATA</button>
   </div>
 
 
@@ -111,6 +140,7 @@
   <script src="components/seiyria-bootstrap-slider/dist/bootstrap-slider.js"></script>
   <!-- <script src="js/build.js"></script> -->
   <script src="js/main.js"></script>
+  <script src="js/network.js"></script>
 
 
 </body>
