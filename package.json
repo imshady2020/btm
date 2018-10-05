@@ -23,13 +23,13 @@
   },
   "homepage": "https://github.com/insanity54/btm#readme",
   "dependencies": {
-    "bitcore-lib": "0.13.14",
+    "bitcore-lib": "0.15.0",
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "nedb": "^1.8.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "debug": "^2.2.0"
+    "chai": "^4.2.0",
+    "debug": "^4.0.1"
   }
 }
