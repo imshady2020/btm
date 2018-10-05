@@ -1,4 +1,7 @@
 # btm
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/insanity54/btm.svg)](https://greenkeeper.io/)
+
 simple bitcoin atm
 
 
