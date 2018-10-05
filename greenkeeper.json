@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "ui/components/bitcore-lib/benchmark/package.json",
+        "ui/components/bitcore-lib/package.json",
+        "ui/components/seiyria-bootstrap-slider/package.json"
+      ]
+    }
+  }
+}
